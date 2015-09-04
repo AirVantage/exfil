@@ -9,7 +9,7 @@ Exfil
 
 ## Principle
 
-Watch all Auto Scaling Group instances by calling their health check URL and detach them before they get killed :)
+Watch an Auto Scaling Group instances by calling their health check URL and detach them before they get killed :)
 
 ## Use case?
 
@@ -17,9 +17,9 @@ You want to perform a post mortem on instances that get killed with no apparent 
 
 ## Getting started
 
-1. Clone this repo
-2. `npm install`
-3.  Create a `config/local.yml` file to override the defaults
+* Clone this repo
+* `npm install`
+*  Create a `config/local.yml` file to override the defaults
 ~~~yaml
 # AWS Region
 region: eu-west-1
@@ -34,7 +34,7 @@ port: 8080
 # Guess what...
 checkUrl: /check/app
 ~~~
-4. `npm start`
+* `npm start`
 
 
 
