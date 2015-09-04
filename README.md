@@ -21,6 +21,8 @@ You want to perform a post mortem on instances that get killed with no apparent 
 * `npm install`
 *  Create a `config/local.yml` file to override the defaults
 ~~~yaml
+# Do not exfiltrate, just inform that you would have
+dryRun: true
 # AWS Region
 region: eu-west-1
 # Prefix of your Auto Scaling Group
@@ -28,7 +30,7 @@ asgPrefix: dev1-av-ui
 # 2 failing checks will trigger an exfiltration
 threshold: 2
 # Check interval
-interval: 2000
+interval: 4000
 # Webapp port
 port: 8080
 # Guess what...
