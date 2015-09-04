@@ -1,0 +1,27 @@
+{
+  "name": "exfil",
+  "version": "0.0.1",
+  "description": "Check ELB instances health and exfiltrate them from their auto scaling group before they get killed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "keywords": [
+    "aws",
+    "elb",
+    "autoscaling",
+    "healthcheck"
+  ],
+  "author": "sebz <sebzen@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1.49",
+    "bluebird": "^2.9.34",
+    "config": "^1.16.0",
+    "conzole": "^0.2.0",
+    "got": "^4.1.1",
+    "js-yaml": "^3.4.0",
+    "lodash": "^3.10.1"
+  }
+}
