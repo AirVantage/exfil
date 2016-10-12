@@ -29,15 +29,15 @@ function getInstancesToWatch() {
         return instance.LifecycleState === "InService";
     });
 
-    conzole.indent(4).quote("Monitor instances:", _.pluck(healthyInstances, "InstanceId"));
+    conzole.indent(4).quote("Monitor instances:", _.map(healthyInstances, "InstanceId"));
 
     // Get more details on the healthy instances
     return ec2.describeInstancesAsync({
-            InstanceIds: _.pluck(healthyInstances, "InstanceId")
+            InstanceIds: _.map(healthyInstances, "InstanceId")
         })
         .then(function(instancesDescriptions) {
             // Clean the result
-            var instances = _.pluck(instancesDescriptions.Reservations, "Instances");
+            var instances = _.map(instancesDescriptions.Reservations, "Instances");
             return _.flatten(instances);
         });
 }
@@ -91,7 +91,7 @@ function handleKOStatus(instance) {
 
 function exfilInstances(instances) {
     if (instances.length > 0) {
-        var ids = _.pluck(instances, "InstanceId");
+        var ids = _.map(instances, "InstanceId");
         if (exfiledInstances.length > 0) {
             // exclude already exfiled instance that may still be attached to the ELB
             ids = _.intersection(ids, exfiledInstances);
